@@ -37,22 +37,29 @@ const connectDB =async ()=>
     //   subjects:["Maths","Physics"],
 
     // });
-    const result = await students.insertMany([
-      {
-      name :"Archie",
-      age :22,
-      grade :"O",
-      pass:"true",
-      subjects : ["WEB" , "DSA"],
-      },
-      {
-        name :"Shubham",
-        age :22,
-        grade :"A",
-        pass:"true",
-        subjects : ["WEB" , "Java"],
-        },
-    ]);
+    // const result = await students.insertMany([
+    //   {
+    //   name :"Archie",
+    //   age :22,
+    //   grade :"O",
+    //   pass:"true",
+    //   subjects : ["WEB" , "DSA"],
+    //   },
+    //   {
+    //     name :"Shubham",
+    //     age :22,
+    //     grade :"A",
+    //     pass:"true",
+    //     subjects : ["WEB" , "Java"],
+    //     },
+    // ]);
+
+    //READ OPERATIONS
+    //FIND
+    const resultCursor =students.find();
+    const result = await resultCursor.toArray();
+
+// console.log(resultCursor);
     console.log(result);
   }
   catch(error)
