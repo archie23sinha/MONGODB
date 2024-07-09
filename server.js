@@ -30,7 +30,7 @@ const connectDB =async ()=>
     const students = database.collection('students');
 //INSERT MANY
 
-    //documents()
+    // documents()
     // const result =await students.insertOne({
     //   name :'Bansh',
     //   age:22,
@@ -52,15 +52,22 @@ const connectDB =async ()=>
     //     pass:"true",
     //     subjects : ["WEB" , "Java"],
     //     },
-    // ]);
+    //]);
 
     //READ OPERATIONS
     //FIND
-    const resultCursor =students.find();
-    const result = await resultCursor.toArray();
+//     const resultCursor =students.find();
+//     const result = await resultCursor.toArray();
 
-// console.log(resultCursor);
-    console.log(result);
+// // console.log(resultCursor);
+//     console.log(result);
+
+//FIND ONE
+const result = await students.findOne({
+  age:22,
+});
+console.log(result);
+
   }
   catch(error)
   {
