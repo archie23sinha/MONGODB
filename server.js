@@ -64,7 +64,7 @@ const connectDB =async ()=>
 
 //FIND ONE
 const result = await students.findOne({
-  age:22,
+  name :"Archie",
 });
 console.log(result);
 
